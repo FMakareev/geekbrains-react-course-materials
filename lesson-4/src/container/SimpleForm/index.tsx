@@ -1,0 +1,21 @@
+import React from 'react';
+import { useSimpleForm } from './hooks/useSimpleForm';
+
+export const SimpleForm = (props: any) => {
+  const state = useSimpleForm();
+
+  return (
+    <div>
+      <header>
+        <h1>SimpleForm</h1>
+      </header>
+      {props.render &&
+        typeof props.render === 'function' &&
+        props.render(state)}
+
+      {props.children &&
+        typeof props.children === 'function' &&
+        props.children(state)}
+    </div>
+  );
+};

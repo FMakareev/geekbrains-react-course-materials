@@ -3,4 +3,4 @@
 
 ## Уроки
 
-* [Урок 4 - children, render props, react-router](./geekbrains-react-lesson-4);
+* [Урок 4 - children, render props, react-router](./lesson-4);
