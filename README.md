@@ -5,6 +5,7 @@
 
 * [Урок 4 - children, render props, react-router](./lesson-4);
 * [Урок 5. Контекст. Компоненты высшего порядка. Знакомство с Redux](./lesson-5);
+* [Урок 6. Погружение в react-redux ](./lesson-6);
 
 # Дополнительные материалы
 
