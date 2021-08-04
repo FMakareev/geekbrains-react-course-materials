@@ -6,6 +6,7 @@
 * [Урок 4 - children, render props, react-router](./lesson-4);
 * [Урок 5. Контекст. Компоненты высшего порядка. Знакомство с Redux](./lesson-5);
 * [Урок 6. Погружение в react-redux ](./lesson-6);
+* [Урок 7. Redux middlewares. Redux-persist. ](./lesson-7);
 
 # Дополнительные материалы
 
@@ -28,3 +29,13 @@
 ## redux
 
 - [Redux Toolkit как средство эффективной Redux-разработки](https://habr.com/ru/company/inobitec/blog/481288/);
+- [Building Redux from scratch](https://medium.com/@guokai83524/building-redux-from-scratch-e12eb0e484c8)
+
+## API
+
+- [Простым языком об HTTP](https://habr.com/ru/post/215117/)
+- [Публичные API для тренировки](https://github.com/public-apis/public-apis)
+- [Как спроектировать правильный конечный автомат на REST](https://ru.hexlet.io/blog/posts/kak-sproektirovat-pravilnyy-konechnyy-avtomat-na-rest)
+- [Григорий Петров. Общение микросервисов: REST, JSON, GraphQL или gRPC?](https://youtu.be/o7ogFTMJW1A)
+- [Введение в REST API — RESTful веб-сервисы](https://habr.com/ru/post/483202/)
+- [JSON API – работаем по спецификации](https://habr.com/ru/company/oleg-bunin/blog/433322/)
