@@ -1,18 +1,21 @@
 import React from 'react';
-import { ListItem, ListItemText, ListItemSecondaryAction, IconButton } from '@material-ui/core';
+import {ListItem, ListItemText, ListItemSecondaryAction, IconButton} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 
 export const PlayerCard = ({name, count, remove}) => {
-    return (
-        <ListItem>
-            <ListItemText primary={name} />
-            <ListItemText primary={`score: ${count || 0}`} />
-            <ListItemSecondaryAction >
-                <IconButton onClick={remove} edge="end" aria-label="delete">
-                    <DeleteIcon />
-                </IconButton>
-            </ListItemSecondaryAction>
-        </ListItem>
-    );
+  return (
+    <ListItem>
+      <ListItemText primary={name}/>
+      <ListItemText primary={`score: ${count || 0}`}/>
+      {
+        remove &&
+        <ListItemSecondaryAction>
+          <IconButton onClick={remove} edge="end" aria-label="delete">
+            <DeleteIcon/>
+          </IconButton>
+        </ListItemSecondaryAction>
+      }
+    </ListItem>
+  );
 };

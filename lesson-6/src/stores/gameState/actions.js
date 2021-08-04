@@ -8,12 +8,14 @@ export const SHOW_ANSWER = 'SHOW_ANSWER';
 export const HIDE_ANSWER = 'HIDE_ANSWER'; 
 
 
-export const createIncrementactiveQuestionIndex = () => ({
-    type: INCREMENT_ACTIVE_QUESTION
+export const createIncrementActiveQuestionIndex = (index) => ({
+    type: INCREMENT_ACTIVE_QUESTION,
+    payload: index
 })
 
-export const createIncrementactivePlayerIndex  = () => ({
-    type: INCREMENT_ACTIVE_PLAYER
+export const createIncrementActivePlayerIndex  = (index) => ({
+    type: INCREMENT_ACTIVE_PLAYER,
+    payload: index
 })
 
 export const createStartGame  = (gameState) => ({

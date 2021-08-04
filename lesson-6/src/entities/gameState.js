@@ -1,9 +1,7 @@
 
 
-export const createGameState = (players, questions) => {
+export const createGameState = () => {
     return {
-        players,
-        questions,
         activeQuestionIndex: 0,
         activePlayerIndex: 0,
         isShowAnswer: false,

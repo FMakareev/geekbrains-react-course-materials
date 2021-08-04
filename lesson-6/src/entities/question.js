@@ -1,9 +1,10 @@
 
+
 /**
  * @param question {string}
- * @param id {string}
- * @param answers {Answer[]}
+ * @param correct_answer {string}
+ * @param incorrect_answers {string[]}
  * */
-export const createQuestion = (question, id, answers) => ({
-    question, id, answers
+export const createQuestion = (question, correct_answer, incorrect_answers) => ({
+    question, correct_answer, incorrect_answers
 })

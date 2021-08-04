@@ -25,24 +25,16 @@ export const gameStateReducer = (state = initialState, action) => {
             return {
                 gameState: {
                     ...state.gameState,
-                    activeQuestionIndex: state.gameState.activeQuestionIndex + 1,
+                    activeQuestionIndex: action.payload,
                 },
             }
         }
 
         case (INCREMENT_ACTIVE_PLAYER): {
-            let activePlayerIndex = state.gameState.activePlayerIndex
-
-            if (activePlayerIndex === state.gameState.players.length - 1) {
-                activePlayerIndex = 0;
-            } else {
-                activePlayerIndex += 1;
-            }
-            
             return {
                 gameState: {
                     ...state.gameState,
-                    activePlayerIndex,
+                    activePlayerIndex: action.payload,
                 },
             }
         }

@@ -1,7 +1,17 @@
-import {createStore, combineReducers} from 'redux';
+import {createStore, combineReducers, compose, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+
 import {playersReducer} from "./players";
 import {questionsReducer} from "./questions";
 import {gameStateReducer} from "./gameState";
+
+const persistConfig = {
+    key: 'root',
+    storage,
+}
+
 
 
 const rootReducer = combineReducers({
@@ -10,7 +20,18 @@ const rootReducer = combineReducers({
     gameState: gameStateReducer,
 })
 
+const loggerMiddleware = (store) => (dispatch) => (action) => {
 
-export const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+    console.log('[LOGGER]: ',store,dispatch, action)
+    return dispatch(action);
+}
 
 
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+export const store = createStore(persistReducer(persistConfig, rootReducer), composeEnhancers(
+  applyMiddleware(loggerMiddleware, thunk),
+))
+
+export const persistor = persistStore(store)

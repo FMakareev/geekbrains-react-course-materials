@@ -1,4 +1,4 @@
-import {PlayerListPage} from "./pages/PlayerListPage";
+import {GameSettingsPage} from "./pages/PlayerListPage";
 
 /**
  * 1. отобразить список игроков
@@ -14,7 +14,7 @@ import {PlayerListPage} from "./pages/PlayerListPage";
 function App() {
   return (
     <div className="App">
-      <PlayerListPage/>
+      <GameSettingsPage/>
     </div>
   );
 }
