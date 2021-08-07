@@ -3,10 +3,11 @@
 
 ## Уроки
 
-* [Урок 4 - children, render props, react-router](./lesson-4);
+* [Урок 4. children, render props, react-router](./lesson-4);
 * [Урок 5. Контекст. Компоненты высшего порядка. Знакомство с Redux](./lesson-5);
 * [Урок 6. Погружение в react-redux ](./lesson-6);
 * [Урок 7. Redux middlewares. Redux-persist. ](./lesson-7);
+* [Урок 8. Работа с API](./lesson-8);
 
 # Дополнительные материалы
 
@@ -39,3 +40,4 @@
 - [Григорий Петров. Общение микросервисов: REST, JSON, GraphQL или gRPC?](https://youtu.be/o7ogFTMJW1A)
 - [Введение в REST API — RESTful веб-сервисы](https://habr.com/ru/post/483202/)
 - [JSON API – работаем по спецификации](https://habr.com/ru/company/oleg-bunin/blog/433322/)
+- [библиотека для имитации API](https://miragejs.com);
