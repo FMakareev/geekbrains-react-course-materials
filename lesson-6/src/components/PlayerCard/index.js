@@ -3,9 +3,9 @@ import {ListItem, ListItemText, ListItemSecondaryAction, IconButton} from '@mate
 import DeleteIcon from '@material-ui/icons/Delete';
 
 
-export const PlayerCard = ({name, count, remove}) => {
+export const PlayerCard = ({name, count, remove, selected}) => {
   return (
-    <ListItem>
+    <ListItem selected={selected}>
       <ListItemText primary={name}/>
       <ListItemText primary={`score: ${count || 0}`}/>
       {

@@ -9,6 +9,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 
 import {store, persistor} from "./stores";
 import {GameSettingsPage} from "./pages/GameSettingsPage";
+import {GameLoadingPage} from "./pages/GameLoadingPage";
 import {GameViewPage} from "./pages/GameViewPage";
 
 
@@ -28,7 +29,8 @@ ReactDOM.render(
       <PersistGate loading={null} persistor={persistor}>
         <Router>
           <Route path="/" exact component={GameSettingsPage}/>
-          <Route path="/game" exact component={GameViewPage}/>
+          <Route path="/game/loading" exact component={GameLoadingPage}/>
+          <Route path="/game/view" exact component={GameViewPage}/>
         </Router>
       </PersistGate>
     </Provider>

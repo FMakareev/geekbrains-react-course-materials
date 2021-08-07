@@ -1,10 +1,13 @@
 import {connect} from "react-redux";
-import {createActionLoadingQuestions, getQuestionLoadingStatusSelector} from "../stores/questions";
+import {
+  createActionLoadingQuestions,
+  questionsSelectors
+} from "../stores/questions";
 
 
 const mapStateToProps = (state) => ({
-  isLoadingQuestions: getQuestionLoadingStatusSelector(state),
-
+  isLoadingQuestions: questionsSelectors.getQuestionLoadingStatusSelector(state),
+  questions: questionsSelectors.getQuestionsListSelector(state),
 })
 
 const mapDispatchToProps = (dispatch) => ({

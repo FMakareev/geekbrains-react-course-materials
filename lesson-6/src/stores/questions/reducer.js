@@ -3,7 +3,7 @@ import {ADD_QUESTION_LIST, CLEAR_QUESTION_LIST, LOADING_QUESTION_LIST, ERROR_LOA
 
 const initialState = {
     questions: [],
-    isLoading: false,
+    isLoading: true,
     error: null
 }
 

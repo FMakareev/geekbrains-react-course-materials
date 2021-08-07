@@ -4,7 +4,7 @@ import {Button} from '@material-ui/core';
 
 export const StartGameContainer = () => {
   return (
-    <Button to='/game' component={Link}>
+    <Button to='/game/loading' component={Link}>
       start game
     </Button>
   );

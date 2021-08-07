@@ -1,3 +1,4 @@
+
 export const getGameState = (state) => state.gameState?.gameState;
 
 export const getPlayers = (state) => getGameState(state)?.players || [];
@@ -22,10 +23,24 @@ export const getActivePlayer = (state) => {
     return players[activePlayerIndex];
 }
 
+export const getCorrectAnswerSelector = (state) => getActiveQuestion(state).correct_answer;
+
+export const getIncorrectAnswerSelector = (state) => getActiveQuestion(state).incorrect_answers || [];
+
+export const getAllAnswerForQuestionSelector = (state) => {
+    const correct = getCorrectAnswerSelector(state);
+    const incorrect = getIncorrectAnswerSelector(state);
+    return [...incorrect, correct];
+}
+
+
 export const getShowAnswerStatus = (state) => getGameState(state)?.isShowAnswer;
 
 
 export const gameStateSelector = {
+    getAllAnswerForQuestionSelector,
+    getCorrectAnswerSelector,
+    getIncorrectAnswerSelector,
     getGameState,
     getPlayers,
     getQuestions,
