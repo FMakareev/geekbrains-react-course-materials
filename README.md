@@ -3,6 +3,7 @@
 
 ## Уроки
 
+* [Урок 1. Знакомство с ReactJS. Первые компоненты](./lesson-1);
 * [Урок 4. children, render props, react-router](./lesson-4);
 * [Урок 5. Контекст. Компоненты высшего порядка. Знакомство с Redux](./lesson-5);
 * [Урок 6. Погружение в react-redux ](./lesson-6);
@@ -22,6 +23,10 @@
 - [Наблюдатель (observer)](https://refactoring.guru/ru/design-patterns/observer)
 - [react patterns](https://reactpatterns.com/);
 - [React: лучшие практики](https://habr.com/ru/post/541320/)
+
+## react
+
+- [Чем функциональные компоненты React отличаются от компонентов, основанных на классах?](https://habr.com/ru/company/ruvds/blog/444348/)
 
 ## react-router
 - [Build a react-router clone from scratch](https://dev.to/thomascullen/build-a-react-router-clone-from-scratch-38dp)
