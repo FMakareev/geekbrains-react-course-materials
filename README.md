@@ -46,3 +46,8 @@
 - [Введение в REST API — RESTful веб-сервисы](https://habr.com/ru/post/483202/)
 - [JSON API – работаем по спецификации](https://habr.com/ru/company/oleg-bunin/blog/433322/)
 - [библиотека для имитации API](https://miragejs.com);
+
+
+## Производительность
+
+- [Опасный React / Елена Жукова - крутой доклад с живым примером отладки приложения](https://youtu.be/ze4Qve1azA0)
