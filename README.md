@@ -27,6 +27,17 @@
 ## react
 
 - [Чем функциональные компоненты React отличаются от компонентов, основанных на классах?](https://habr.com/ru/company/ruvds/blog/444348/)
+- [Немного о том, как работает виртуальный DOM в React](https://habr.com/ru/company/macloud/blog/558682/)
+- [Как написать свой Virtual DOM](https://amorgunov.com/posts/2020-08-03-create-own-virtual-dom/)
+- [Virtual DOM - основной алгоритм React.js (video)](https://youtu.be/gb-93KcTRFo)
+- [Виртуальный DOM и детали его реализации в React](https://ru.reactjs.org/docs/faq-internals.html)
+- [Согласование (reconciliation)](https://ru.reactjs.org/docs/reconciliation.html)
+
+## react UI libs
+
+- [material-ui](https://material-ui.com/ru/getting-started/installation/)
+- [ant.design](https://ant.design/)
+- [mantine](https://mantine.dev/)
 
 ## react-router
 - [Build a react-router clone from scratch](https://dev.to/thomascullen/build-a-react-router-clone-from-scratch-38dp)
