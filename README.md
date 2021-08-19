@@ -3,12 +3,17 @@
 
 ## Уроки
 
-* [Урок 1. Знакомство с ReactJS. Первые компоненты](./lesson-1);
+* [Урок 1. Знакомство с ReactJS. Первые компоненты (Поток от 10 августа 2021)](./lesson-1);
+* [Урок 2. Жизненный цикл компонента React (Поток от 10 августа 2021)](./lesson-2);
+* [Урок 3. Virtual DOM. Material UI. PropTypes (Поток от 10 августа 2021)](./lesson-3);
 * [Урок 4. children, render props, react-router](./lesson-4);
+* [Урок 4. children, render props, react-router (Поток от 10 августа 2021)](./lesson-4-2);
 * [Урок 5. Контекст. Компоненты высшего порядка. Знакомство с Redux](./lesson-5);
 * [Урок 6. Погружение в react-redux ](./lesson-6);
 * [Урок 7. Redux middlewares. Redux-persist. ](./lesson-7);
 * [Урок 8. Работа с API](./lesson-8);
+* [Урок 9. Знакомство с Firebase](./lesson-9);
+* [Урок 10. Тестирование и оптимизация приложений на React](./lesson-10);
 
 # Дополнительные материалы
 
@@ -41,7 +46,7 @@
 
 ## react-router
 - [Build a react-router clone from scratch](https://dev.to/thomascullen/build-a-react-router-clone-from-scratch-38dp)
-
+- [роутинг в реакт приложении (делаем свой react-router 4), асинхронная загрузка данных](https://youtu.be/fsC6r_prek8)
 
 ## redux
 
