@@ -50,6 +50,7 @@ export const createSimpleStore = (reducer, initialState) => {
 
 
 export const combineReducers = (reducers) => {
+
     return (state = {}, action) => {
         const newState = {};
         for (let reducerName in reducers) {
