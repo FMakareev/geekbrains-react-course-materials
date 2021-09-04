@@ -13,7 +13,7 @@ const featuredPosts = [
   },
   {
     id: 'post_2',
-    title: 'Post title',
+    title: 'PostItem title',
     date: 'Nov 11',
     description:
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
