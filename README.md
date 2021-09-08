@@ -67,3 +67,10 @@
 ## Производительность
 
 - [Опасный React / Елена Жукова - крутой доклад с живым примером отладки приложения](https://youtu.be/ze4Qve1azA0)
+
+## Архитектура
+
+- [solid](https://ota-solid.vercel.app/)
+- [Чистая архитектура во фронтенде, доклад на Frontend Crew #2](https://bespoyasov.ru/blog/clean-architecture-on-frontend/)
+- [Чистая архитектура. Искусство разработки программного обеспечения | Мартин Роберт](https://www.ozon.ru/product/chistaya-arhitektura-iskusstvo-razrabotki-programmnogo-obespecheniya-144499396/?sh=y6EO1HcV)
+- [Чистая Архитектура для веб-приложений](https://habr.com/ru/post/493430/)
