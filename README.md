@@ -37,6 +37,10 @@
 - [Virtual DOM - основной алгоритм React.js (video)](https://youtu.be/gb-93KcTRFo)
 - [Виртуальный DOM и детали его реализации в React](https://ru.reactjs.org/docs/faq-internals.html)
 - [Согласование (reconciliation)](https://ru.reactjs.org/docs/reconciliation.html)
+- [Введение в React Hooks](https://habr.com/ru/post/429712/)
+- [Вопросы для собеседования по хукам React](https://habr.com/ru/post/534632/)
+- [Революция или боль? Доклад Яндекса о React Hooks](https://habr.com/ru/company/yandex/blog/464071/)
+- [Заметка о том, как работают хуки в React](https://habr.com/ru/post/553104/)
 
 ## react UI libs
 
