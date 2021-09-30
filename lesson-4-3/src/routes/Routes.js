@@ -6,7 +6,7 @@ import {Post} from "./Posts/routes/Post";
 import {Profile} from "./Profile";
 import {NotFound} from "./NotFound";
 import {RenderProp} from "./RenderProp";
-import {getHomePath, getPostCommentsByIdPath, getPostsByIdPath, getPostsPath} from "../navigation";
+import {getPostCommentsByIdPath, getPostsByIdPath, getPostsPath} from "../navigation";
 
 console.log('getPostsPath: ',getPostsPath());
 console.log('getPostsByIdPath: ',getPostsByIdPath());
@@ -26,7 +26,6 @@ export const Routes = (props) => {
 
   return (
     <Switch>
-      {/* "/" === "/"*/}
       <Route exact path="/" component={Home} />
       <Route exact path={getPostsPath()} component={Posts} />
       <Route path={getPostsByIdPath()} component={Post} />
