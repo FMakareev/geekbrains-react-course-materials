@@ -41,6 +41,7 @@
 - [Вопросы для собеседования по хукам React](https://habr.com/ru/post/534632/)
 - [Революция или боль? Доклад Яндекса о React Hooks](https://habr.com/ru/company/yandex/blog/464071/)
 - [Заметка о том, как работают хуки в React](https://habr.com/ru/post/553104/)
+- [Примеры HOC для react](https://medium.com/dailyjs/react-composing-higher-order-components-hocs-3a5288e78f55)
 
 ## react UI libs
 
