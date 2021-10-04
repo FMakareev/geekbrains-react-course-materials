@@ -86,6 +86,13 @@
 
 - [Redux Toolkit как средство эффективной Redux-разработки](https://habr.com/ru/company/inobitec/blog/481288/);
 - [Building Redux from scratch](https://medium.com/@guokai83524/building-redux-from-scratch-e12eb0e484c8)
+- [Redux: шаг за шагом](https://medium.com/devschacht/redux-step-by-step-e6c42a9b00cd)
+
+## redux selectors
+
+- [Готовим селекторы в Redux](https://habr.com/ru/post/564004/)
+- [Вычисление производных данных](https://rajdee.gitbooks.io/redux-in-russian/content/docs/recipes/ComputingDerivedData.html)
+- [Повышение производительности React и Redux с Reselect](https://medium.com/devschacht/neil-fenton-improving-react-and-redux-performance-with-reselect-40f1d3efba89)
 
 ## API
 
