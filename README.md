@@ -71,6 +71,8 @@
 - [Революция или боль? Доклад Яндекса о React Hooks](https://habr.com/ru/company/yandex/blog/464071/)
 - [Заметка о том, как работают хуки в React](https://habr.com/ru/post/553104/)
 - [Примеры HOC для react](https://medium.com/dailyjs/react-composing-higher-order-components-hocs-3a5288e78f55)
+- [reactcheatsheet](https://reactcheatsheet.com/);
+- [reactpatterns](https://reactpatterns.com/);
 
 ## react UI libs
 
@@ -87,6 +89,7 @@
 - [Redux Toolkit как средство эффективной Redux-разработки](https://habr.com/ru/company/inobitec/blog/481288/);
 - [Building Redux from scratch](https://medium.com/@guokai83524/building-redux-from-scratch-e12eb0e484c8)
 - [Redux: шаг за шагом](https://medium.com/devschacht/redux-step-by-step-e6c42a9b00cd)
+- [Redux. Простой как грабли](https://habr.com/ru/post/439104/)
 
 ## redux selectors
 
