@@ -29,7 +29,9 @@ export const Login = ({
       <Box
         sx={style}
       >
-        <Typography component="h1" variant="h5">
+        <Typography sx={{
+          color: 'primary.light'
+        }} component="h1" variant="h5">
           Sign in
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>

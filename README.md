@@ -6,6 +6,11 @@
 - [telegram](https://t.me/fmakareev)
 - [blog](https://t.me/omnotes)
 
+## Must watch
+
+- [Почему сложно программировать UI (Кирилл Мокевнин)](https://youtu.be/DCeNCr2tKOI)
+- [Кирилл Мокевнин Ментальное программирование](https://youtu.be/vkUTX1hruF8)
+
 ## Уроки
 
 ### Поток от 12 июля 2021

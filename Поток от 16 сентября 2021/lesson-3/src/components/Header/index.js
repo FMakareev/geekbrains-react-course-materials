@@ -9,7 +9,7 @@ export const Header = (props) => {
   return <>
     <AppBar position="relative">
       <Toolbar>
-        <Typography  sx={{ flexGrow: 1 }} variant="h6" color="inherit" noWrap>
+        <Typography sx={{ flexGrow: 1 }} variant="h6" color="inherit" noWrap>
           Album
         </Typography>
 
