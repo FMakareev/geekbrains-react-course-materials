@@ -8,16 +8,20 @@ export const createComment = () => ({
   comment: chance().paragraph(),
 })
 
-export const createPost = () => ({
-  id: chance().fbid(),
-  createAt: chance().date({string: true, american: false}),
-  author: chance().name(),
-  title: chance().sentence(),
-  content: chance().paragraph({ sentences: 20 }),
-  // comments: Array.from({
-  //   length: 5,
-  // }).map(createComment)
-})
+export const createPost = () => {
+  const commentsCount = chance.integer({ min: 0, max: 10 });
+  return ({
+    id: chance().fbid(),
+    createAt: chance().date({string: true, american: false}),
+    author: chance().name(),
+    title: chance().sentence(),
+    content: chance().paragraph({ sentences: 20 }),
+    commentsCount,
+    comments: Array.from({
+      length: commentsCount,
+    }).map(createComment)
+  })
+}
 
 export const createPosts = (count) => Array.from({
   length: count,
