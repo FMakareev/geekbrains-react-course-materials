@@ -1,6 +1,7 @@
 
 
-export const createTodo = (title, content) => ({
+export const createTodoEntity = (title, content) => ({
   title,
-  content
+  content,
+  isDone: false
 })

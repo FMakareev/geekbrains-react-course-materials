@@ -1,10 +1,14 @@
 import React from 'react';
+import {Stack} from "react-bootstrap";
+import {TodoItem} from "./TodoItem";
 
 
-export const TodoList = (props) => {
+export const TodoList = ({list, onChange, removeTodo}) => {
   return (
-    <div>
-      TodoList
-    </div>
+    <Stack gap={2}>
+      {
+        list.map((item) => (<TodoItem removeTodo={removeTodo} key={item.id} {...item} onChange={onChange} />))
+      }
+    </Stack>
   );
 };

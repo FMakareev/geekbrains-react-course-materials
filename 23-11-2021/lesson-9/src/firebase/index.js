@@ -16,5 +16,4 @@ export const auth = firebase.auth();
 export const db = firebase.database();
 
 export const rootRef = db.ref("root");
-
-export const chatsRef = rootRef.child("chats");
+export const todosRef = db.ref("todos");
