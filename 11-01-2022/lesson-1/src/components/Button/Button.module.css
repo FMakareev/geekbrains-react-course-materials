@@ -1,0 +1,13 @@
+
+.reset {
+    background-color: transparent;
+    border: none;
+}
+
+.alert {
+    background-color: red;
+}
+
+.primary {
+    background-color: #0c43c9;
+}
