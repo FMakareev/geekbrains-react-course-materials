@@ -1,9 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
-import {ContextExample} from "./examples/context";
-import {HOCs} from "./examples/HOCs";
-import {SimpleRedux} from "./examples/simpleRedux";
 import {ReduxExample} from "./examples/reduxExample";
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
@@ -11,7 +7,9 @@ function App() {
       {/*<ContextExample/>*/}
       {/*<HOCs/>*/}
       {/*<SimpleRedux/>*/}
-      <ReduxExample/>
+      <BrowserRouter>
+        <ReduxExample/>
+      </BrowserRouter>
     </div>
   );
 }
