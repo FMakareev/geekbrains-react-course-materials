@@ -1,10 +1,4 @@
-
-const add = (a) => (b) => a + b;
-
-add(2)(3)
-const add2 = add(2)
-
-add2(5)
+import {TASK_STATUS_FILTER} from "../../constants";
 
 export const getTasksFromReducer = (state) => state.tasks;
 
@@ -12,13 +6,15 @@ export const getProjectTasks = (projectID) => (state) => getTasksFromReducer(sta
 
 export const getTasksFilter = (state) => getTasksFromReducer(state).filter;
 
+export const getTasksStatusFilter = (state) => getTasksFilter(state).status;
+
 export const getFilteredByStatusTaskList = (projectID) => (state) => {
   const list = getProjectTasks(projectID)(state);
   const filter = getTasksFilter(state);
 
-  if(filter.status === undefined) {
+  if(filter.status === TASK_STATUS_FILTER.all) {
     return list;
   }
 
-  return list.filter(({status}) => status === filter.status);
+  return list?.filter(({status}) => status === filter.status);
 }

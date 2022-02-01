@@ -1,4 +1,5 @@
 import {ADD_TODO, CHANGE_TODO_STATUS, REMOVE_TODO, SET_FILTER_BY_STATUS} from "./actions";
+import {TASK_STATUS_FILTER} from "../../constants";
 
 
 const initialState = {
@@ -6,7 +7,7 @@ const initialState = {
 
   },
   filter: {
-    status: undefined,
+    status: TASK_STATUS_FILTER.all,
     search: '',
     sortBy: undefined,
   }
@@ -43,20 +44,23 @@ export const todoReducer = (state = initialState, action) => {
       }
     }
     case CHANGE_TODO_STATUS: {
-      const copyList = [...state.list];
-      const targetTodoIndex = copyList.findIndex(({id}) => action.payload.id === id);
-      if(targetTodoIndex === -1) {
+
+      const targetTaskIndex = state.tasks[action.payload.projectID].findIndex(({id}) => id === action.payload.id);
+      if(targetTaskIndex === -1){
         return state;
       }
 
-      copyList[targetTodoIndex] = {
-        ...copyList[targetTodoIndex],
+      const copyTasks = {...state.tasks};
+      const targetTask = {
+        ...copyTasks[action.payload.projectID][targetTaskIndex],
         status: action.payload.status,
       }
+      copyTasks[action.payload.projectID] = [...copyTasks[action.payload.projectID]];
+      copyTasks[action.payload.projectID][targetTaskIndex] = targetTask
 
       return {
         ...state,
-        list: copyList,
+        tasks: {...copyTasks}
       }
     }
     default: {

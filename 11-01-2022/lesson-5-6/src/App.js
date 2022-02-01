@@ -1,14 +1,11 @@
-import {ReduxExample} from "./examples/reduxExample";
 import { BrowserRouter } from 'react-router-dom';
+import { Todo} from "./pages/todo";
 
 function App() {
   return (
     <div className="App">
-      {/*<ContextExample/>*/}
-      {/*<HOCs/>*/}
-      {/*<SimpleRedux/>*/}
       <BrowserRouter>
-        <ReduxExample/>
+        <Todo/>
       </BrowserRouter>
     </div>
   );

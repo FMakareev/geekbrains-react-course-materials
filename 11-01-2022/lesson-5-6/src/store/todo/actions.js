@@ -23,9 +23,10 @@ export const removeTodoAction = (todoId) => ({
   payload: todoId
 })
 
-export const changeTodoStatus = (todoId, status) => ({
+export const changeTodoStatus = (projectID,todoId, status) => ({
   type: CHANGE_TODO_STATUS,
   payload: {
+    projectID,
     id: todoId,
     status
   }
