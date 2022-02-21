@@ -1,3 +1,5 @@
+import {Container, Button, Input, Box, List, ListItem , ListItemText, MenuItem, Select, Checkbox } from '@mui/material';
+import Paper from '@mui/material/Paper';
 
 
 /**
@@ -40,31 +42,60 @@ function App() {
 
 
   return (
-    <div className="App">
-      <form onSubmit={handleSubmit}>
-        <input value={inputValue} onChange={onChangeInput} type="text"/>
-        <button type="submit">save</button>
-      </form>
-      <select value={filterStatus} onChange={onChangeStatus}>
-        <option value={FILTER_BY_STATUS_ALL}>all</option>
-        <option value={FILTER_BY_STATUS_IN_WORK}>in work</option>
-        <option value={FILTER_BY_STATUS_COMPLETED}>complete</option>
-      </select>
+    <Container
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        height: '100vh',
+      }}
+      maxWidth="xs">
+      <Paper
+        sx={{
+          padding: 2,
+          height: '80vh',
+          width: '100%'
+        }}
+        elevation={3}
+      >
+        <Box component={"form"} onSubmit={handleSubmit}>
+          <Input
+            value={inputValue}
+            onChange={onChangeInput}
+            type="text"
+            placeholder="enter your message"
+          />
+          <Button type="submit" variant="contained">save</Button>
 
-      <ul>
-        {
-          filteredList.map(({status, text}, index) => {
-            return <li key={index}>
-              <input
-                checked={status}
-                type="checkbox"
-                onChange={changeStatus(index, status)}
-              /> {text}
-            </li>
-          })
-        }
-      </ul>
-    </div>
+        </Box>
+        <Select
+          value={filterStatus} onChange={onChangeStatus}
+        >
+          <MenuItem value={FILTER_BY_STATUS_ALL}>all</MenuItem>
+          <MenuItem value={FILTER_BY_STATUS_IN_WORK}>in work</MenuItem>
+          <MenuItem value={FILTER_BY_STATUS_COMPLETED}>complete</MenuItem>
+        </Select>
+
+        <List>
+          {
+            filteredList.map(({status, text}, index) => {
+              return <ListItem
+                secondaryAction={
+                  <Checkbox
+                    edge="end"
+                    onChange={changeStatus(index, status)}
+                    checked={status}
+                  />
+                }
+                key={index}>
+                <ListItemText>
+                  {text}
+                </ListItemText>
+              </ListItem>
+            })
+          }
+        </List>
+      </Paper>
+    </Container>
   );
 }
 
