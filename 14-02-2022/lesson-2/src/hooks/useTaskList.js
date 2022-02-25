@@ -1,4 +1,5 @@
 import {useCallback, useState} from "react";
+import {nanoid} from "nanoid";
 
 
 const initialState = []
@@ -10,6 +11,7 @@ export const useTaskList = () => {
     const task = {
       status: false,
       text,
+      id: nanoid(),
     }
     setTaskList((prevState) => {
       return [

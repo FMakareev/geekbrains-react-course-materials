@@ -1,101 +1,53 @@
-import {Container, Button, Input, Box, List, ListItem , ListItemText, MenuItem, Select, Checkbox } from '@mui/material';
-import Paper from '@mui/material/Paper';
+import {Switch, Route} from 'react-router-dom';
+import {Home} from "./routes/Home";
+import {Projects} from "./routes/Projects";
+import {Tasks} from "./routes/Tasks";
+import {Task} from "./routes/Task";
+import {Header} from "./components/Header";
+import {getChildrenAndRenderPropsLink, getHomeLink, getProjectsLink, getTaskLink, getTasksLink} from "./navigation";
+import {ChildrenAndRenderProps} from "./routes/ChildrenAndRenderProps";
 
 
 /**
- * 1. хранение, обновление, рендер данных (useState)
- * 2. кеширование вычислений (useMemo)
- * 3. кеширование ссылок на функции (useCallback)
- * 4. управление сайд эффектами (useEffect)
+ * /company/
+ * /company/:companyId
+ * /company/:companyId/settings
+ * /company/:companyId/projects
+ * /company/:companyId/projects/:projectId
+ * /company/:companyId/projects/:projectId/users
+ * /company/:companyId/projects/:projectId/settings
+ * /company/:companyId/projects/:projectId/tasks
+ * /company/:companyId/projects/:projectId/tasks/:taskId
+ * /company/:companyId/users
  * */
-import {useCreateTaskForm} from "./hooks/useCreateTaskForm";
-import {useTaskList} from "./hooks/useTaskList";
-import {FILTER_BY_STATUS_ALL, FILTER_BY_STATUS_COMPLETED, FILTER_BY_STATUS_IN_WORK} from "./constants";
-import {useFilterByStatus} from "./hooks/useFilterByStatus";
-import {useTaskFilteredByStatus} from "./hooks/useTaskFilteredByStatus";
-
-import {useCacheTaskList} from "./hooks/useCacheTaskList";
 
 /**
- * 1. форма для создания задач (useState, useCallback)
- * 2. рендер списка задач (.map)
- * 3. фильтрация (useMemo, useState)
- * 4. изменение элементов списка (useCallback)
- * 5. кеширование списка задач в локальном хранилище
- * 6. инициализация списка задач из локального хранилища
+ * /
+ * /profile
+ * /chats
+ * /chats/:chatId
+ * /login
+ * /registration
  * */
 
 function App() {
-  const { addNewTask, taskList, changeStatus, setTaskList } = useTaskList();
-
-  useCacheTaskList({setTaskList, taskList})
-
-  const { filterStatus, onChangeStatus } = useFilterByStatus();
-
-  const { filteredList } = useTaskFilteredByStatus({list: taskList, filterStatus});
-
-  const {
-    handleSubmit,
-    onChangeInput,
-    inputValue,
-  } = useCreateTaskForm({ onSubmit: addNewTask });
-
 
   return (
-    <Container
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        height: '100vh',
-      }}
-      maxWidth="xs">
-      <Paper
-        sx={{
-          padding: 2,
-          height: '80vh',
-          width: '100%'
-        }}
-        elevation={3}
-      >
-        <Box component={"form"} onSubmit={handleSubmit}>
-          <Input
-            value={inputValue}
-            onChange={onChangeInput}
-            type="text"
-            placeholder="enter your message"
-          />
-          <Button type="submit" variant="contained">save</Button>
-
-        </Box>
-        <Select
-          value={filterStatus} onChange={onChangeStatus}
-        >
-          <MenuItem value={FILTER_BY_STATUS_ALL}>all</MenuItem>
-          <MenuItem value={FILTER_BY_STATUS_IN_WORK}>in work</MenuItem>
-          <MenuItem value={FILTER_BY_STATUS_COMPLETED}>complete</MenuItem>
-        </Select>
-
-        <List>
-          {
-            filteredList.map(({status, text}, index) => {
-              return <ListItem
-                secondaryAction={
-                  <Checkbox
-                    edge="end"
-                    onChange={changeStatus(index, status)}
-                    checked={status}
-                  />
-                }
-                key={index}>
-                <ListItemText>
-                  {text}
-                </ListItemText>
-              </ListItem>
-            })
-          }
-        </List>
-      </Paper>
-    </Container>
+    <div>
+      <Header/>
+      <Switch>
+        <Route exact path={getHomeLink()} component={Home}/>
+        <Route exact path={getChildrenAndRenderPropsLink()} component={ChildrenAndRenderProps}/>
+        <Route path={getProjectsLink()}>
+          <Projects>
+            <Switch>
+              <Route path={getTaskLink()} component={Task}/>
+              <Route path={getTasksLink()} component={Tasks}/>
+            </Switch>
+          </Projects>
+        </Route>
+      </Switch>
+    </div>
   );
 }
 
