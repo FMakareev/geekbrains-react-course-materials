@@ -1,0 +1,6 @@
+
+export const CREATE_TODO = 'CREATE_TODO';
+
+export const CHANGE_TODO_STATUS = 'CHANGE_TODO_STATUS';
+
+export const DELETE_TODO = 'DELETE_TODO';
