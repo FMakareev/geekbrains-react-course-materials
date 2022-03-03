@@ -1,49 +1,59 @@
 import {CREATE_TODO, CHANGE_TODO_STATUS,DELETE_TODO} from './actions';
 
 const initialState = {
-    todos: [],
+    todos: {
+
+    },
 }
 
 export const todoReducer = (state = initialState, action) => {
 
     switch(action.type) {
         case(CREATE_TODO): {
-
+            const {projectId, todo} = action.payload;
             return {
                 ...state,
-                todos: [
+                todos: {
                     ...state.todos,
-                    action.payload
-                ]
+                    [projectId]: [
+                        ...(state.todos[projectId] || []),
+                        todo
+                    ]
+                }
             }
         }
         case(DELETE_TODO): {
-
+            const {projectId, todoId} = action.payload;
             return {
                 ...state,
-                todos: state.todos.filter(({id}) => id !== action.payload),
+                todos: {
+                    ...state.todos,
+                    [projectId]: state.todos[projectId]?.filter((item) => item.id !== todoId),
+                },
             }
         }
         case(CHANGE_TODO_STATUS): {
-            const {id, status} = action.payload;
-            const targetIndex = state.todos.findIndex((item) => item.id === id);
+            const {projectId, todoId, status} = action.payload;
+            const targetIndex = state.todos[projectId]?.findIndex((item) => item.id === todoId);
 
-            if(targetIndex === -1){
+            if(targetIndex === -1 || targetIndex === undefined){
                 return state;
             }
-            const copyTodos = [...state.todos]
+            const copyTodos = {...state.todos}
 
-            copyTodos[targetIndex] = {
-                ...copyTodos[targetIndex],
+            copyTodos[projectId] = [...copyTodos[projectId]];
+
+            copyTodos[projectId][targetIndex] = {
+                ...copyTodos[projectId][targetIndex],
                 status
             }
 
             return {
                 ...state,
                 todos: copyTodos,
-            } 
+            }
         }
-        default: 
+        default:
             return state;
     }
 }

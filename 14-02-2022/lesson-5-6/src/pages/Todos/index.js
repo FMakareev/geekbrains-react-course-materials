@@ -1,51 +1,42 @@
 import { useDispatch, useSelector} from 'react-redux';
-import {CREATE_TODO, CHANGE_TODO_STATUS, DELETE_TODO} from '../../store/todo/actions';
+import {createTodo, deleteTodo, changeTodo} from '../../store/todo/actions';
+import {useParams} from "react-router-dom";
+import {getTodoListByProject} from "../../store/todo/selectors";
 
 export const Todos = () => {
-
-    const todos = useSelector((state) => state.todos)
+    const {projectId} = useParams();
+    const todos = useSelector(getTodoListByProject(projectId))
     const dispatch = useDispatch();
 
-    const createTodo = () => {
-        dispatch({
-            type: CREATE_TODO,
-            payload: {
-                id: Date.now(),
-                name: 'task',
-                status: false,
-            },
-        })
+    const handleCreateTodo = () => {
+        dispatch(createTodo(projectId, {
+            id: Date.now(),
+            name: 'task',
+            status: false,
+        }))
     }
 
-    const deleteTodo = (id) => () => {
-        dispatch({
-            type: DELETE_TODO,
-            payload: id,
-        })
+    const handleDeleteTodo = (id) => () => {
+        dispatch(deleteTodo(projectId, id));
     }
 
-    const changeStatus = (id, status) => () => {
-        dispatch({
-            type: CHANGE_TODO_STATUS,
-            payload: {
-                id,
-                status: !status,
-            }
-        })
+    const handleChangeStatus = (id, status) => () => {
+        dispatch(changeTodo(projectId, id, !status))
     }
-
-
 
     return <div>
-        <button onClick={createTodo}>
+        <button onClick={handleCreateTodo}>
             create
         </button>
 
         <ul>
-            {todos.map(({id, name, status}) => <li key={id}>
-                <input onClick={changeStatus(id, status)} type="checkbox" checked={status}/>
+            {todos?.map(({id, name, status}) => <li key={id}>
+                <input onClick={handleChangeStatus(id, status)}
+                       type="checkbox"
+                       checked={status}
+                />
                 {name}
-                <button onClick={deleteTodo(id)} >x</button>
+                <button onClick={handleDeleteTodo(id)} >x</button>
             </li>)}
         </ul>
     </div>
