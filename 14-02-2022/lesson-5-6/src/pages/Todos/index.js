@@ -1,15 +1,21 @@
 import { useDispatch, useSelector} from 'react-redux';
-import {createTodo, deleteTodo, changeTodo} from '../../store/todo/actions';
+import {
+    createTodoThunk,
+    deleteTodoThunk,
+    changeTodoThunk
+} from '../../store/todo/actions';
 import {useParams} from "react-router-dom";
-import {getTodoListByProject} from "../../store/todo/selectors";
+import {getIsLoadingTodo, getTodoListByProject, getErrorTodo} from "../../store/todo/selectors";
 
 export const Todos = () => {
     const {projectId} = useParams();
     const todos = useSelector(getTodoListByProject(projectId))
+    const isLoading = useSelector(getIsLoadingTodo)
+    const error = useSelector(getErrorTodo)
     const dispatch = useDispatch();
 
     const handleCreateTodo = () => {
-        dispatch(createTodo(projectId, {
+        dispatch(createTodoThunk(projectId, {
             id: Date.now(),
             name: 'task',
             status: false,
@@ -17,17 +23,25 @@ export const Todos = () => {
     }
 
     const handleDeleteTodo = (id) => () => {
-        dispatch(deleteTodo(projectId, id));
+        dispatch(deleteTodoThunk(projectId, id));
     }
 
     const handleChangeStatus = (id, status) => () => {
-        dispatch(changeTodo(projectId, id, !status))
+        dispatch(changeTodoThunk(projectId, id, !status))
     }
 
     return <div>
         <button onClick={handleCreateTodo}>
             create
         </button>
+        {
+            isLoading &&
+          <p>Loading...</p>
+        }
+        {
+            error &&
+          <p>ERROR</p>
+        }
 
         <ul>
             {todos?.map(({id, name, status}) => <li key={id}>
