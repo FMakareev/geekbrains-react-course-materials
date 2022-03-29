@@ -1,4 +1,4 @@
-import {CREATE_TODO, CHANGE_TODO_STATUS, DELETE_TODO, SET_LOADING_TODO, SET_ERROR_TODO} from './actions';
+import {CREATE_TODO, CHANGE_TODO_STATUS, DELETE_TODO, SET_LOADING_TODO, SET_ERROR_TODO, SET_TODOS} from './actions';
 
 const initialState = {
   todos: {},
@@ -58,6 +58,16 @@ export const todoReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: action.payload,
+      }
+    }
+    case (SET_TODOS): {
+      const {projectId, todos} = action.payload;
+      return {
+        ...state,
+        todos: {
+          ...state.todos,
+          [projectId]: todos
+        }
       }
     }
     case (SET_ERROR_TODO): {

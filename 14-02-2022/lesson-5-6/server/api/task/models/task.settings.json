@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "name": "Task",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "status": {
+      "model": "status"
+    },
+    "project": {
+      "via": "tasks",
+      "model": "project"
+    }
+  }
+}

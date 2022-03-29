@@ -1,0 +1,10 @@
+version: '2.4'
+services:
+  strapi:
+    image: strapi/strapi:3.6.8-node14-alpine
+    volumes:
+      - .:/srv/app
+    ports:
+      - '127.0.0.1:1337:1337'
+    restart: "no"
+

@@ -1,12 +1,31 @@
 import {Link} from "react-router-dom";
+import {useForm} from "../../hooks/useForm";
 
 
-export const ProjectsPresenter = ({handleCreateProject, projects, children}) => {
+export const ProjectsPresenter = ({handleCreateProject, projects, children, isLoading, error}) => {
+
+  const {onChange, onSubmit, getValue} = useForm({name: ''}, handleCreateProject)
+
   return <div>
     <div>
-      <button onClick={handleCreateProject}>
-        create
-      </button>
+      <form onSubmit={onSubmit} >
+        <input type="text" value={getValue('name')} onChange={onChange('name')}/>
+        <button onClick={handleCreateProject}>
+          create
+        </button>
+      </form>
+      {
+        error &&
+        <div>
+          {JSON.stringify(error)}
+        </div>
+      }
+      {
+        isLoading &&
+        <div>
+          Loading
+        </div>
+      }
       <ul>
         {
           projects?.map((item) => {
